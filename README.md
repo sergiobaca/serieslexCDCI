@@ -20,6 +20,9 @@ this is a sample application that demonstrates how to build applications with CD
     - Install Salesforce CLI
     - Install Visual Studio Code
     - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
+    - Autenticate devhub
+    - set variable in proyect with     $ sfdx force:org:display -u <DevHub> --verbose --json > authFile.json
+    https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm
 
 1. If you haven't already done so, authorize your hub org and provide it with an alias (**myhuborg** in the command below):
 

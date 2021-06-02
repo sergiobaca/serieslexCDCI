@@ -6,7 +6,7 @@ on:
     pull_request:
         types: [opened, synchronize, reopened]
         branches:
-            - master
+            - main
         paths:
             - 'force-app/**'
 
