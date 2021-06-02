@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Billing</fullName>
     <availability>online</availability>
@@ -16,5 +16,6 @@
     <protected>false</protected>
     <showsLocation>true</showsLocation>
     <showsStatus>true</showsStatus>
-    <url>http://www.genwatt.com/genwatt/billing.htm?actname={!Account_Name}</url>
+    <url
+    >http://www.genwatt.com/genwatt/billing.htm?actname={!Account_Name}</url>
 </WebLink>
