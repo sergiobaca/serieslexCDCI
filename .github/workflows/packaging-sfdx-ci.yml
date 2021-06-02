@@ -82,32 +82,32 @@ jobs:
             # Extract data from package version create result
             - name: 'Extract package:version:create result data'
               id: extract-data-package-version-create
-              uses: muenzpraeger/github-action-extract-sfdx-packaging-result@main
+              uses: muenzpraeger/github-action-extract-sfdx-packaging-result
               with:
                   json: ${{steps.package-version-create.outputs.result}}
 
             # Wait for package replication
             - name: 'Wait for package replication'
-              uses: maddox/actions/sleep@master
+              uses: maddox/actions/sleep
               with:
                   args: 300
 
             # Install new package into test org
             - name: 'Install new package version into test org'
               if: steps.extract-data-package-version-create.outputs.isSuccess
-              uses: forcedotcom/salesforcedx-actions@main
+              uses: forcedotcom/salesforcedx-actions
               with:
                   args: 'force:package:install --package ${{ steps.extract-data-package-version-create.outputs.packageVersionId }} -w 10 -u packagingorg -r'
 
             # Update sfdx-project.json and README to use only latest package version
             - name: 'Update sfdx-project.json and README'
               id: packaging-updater
-              uses: muenzpraeger/github-action-sfdx-packaging-updater@master
+              uses: muenzpraeger/github-action-sfdx-packaging-updater
 
             # Re-add changes back to source
             - name: 'Add new package version, updated sfdx-project.json and README to source'
               if: steps.packaging-updater.outputs.isSuccess
-              uses: Automattic/action-commit-to-branch@master
+              uses: Automattic/action-commit-to-branch
               with:
                   branch: ${{ github.head_ref }}
                   commit_message: 'Added new package version ID'
