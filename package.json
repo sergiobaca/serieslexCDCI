@@ -13,8 +13,8 @@
         "test:unit:coverage": "sfdx-lwc-jest --coverage --skipApiVersionCheck",
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-        "postinstall": "node bin/check-version.js && husky install",
-        "precommit": "npm run prettier:verify && [ $? -eq 0 ] && (npm run lint && npm run test) || exit -1"
+        "postinstall": "node bin/check-version.js",
+        "precommit": "npm run prettier:verify || exit -1"
     },
     "author": "serieslex",
     "repository": {
