@@ -1,0 +1,40 @@
+{
+    "name": "serieslex",
+    "private": true,
+    "version": "1.0.0",
+    "description": "proyecto base con CICD en serieslex",
+    "scripts": {
+        "lint": "npm run lint:lwc",
+        "lint:lwc": "eslint **/lwc/**",
+        "test": "npm run test:unit",
+        "test:unit": "sfdx-lwc-jest --skipApiVersionCheck",
+        "test:unit:watch": "sfdx-lwc-jest --watch --skipApiVersionCheck",
+        "test:unit:debug": "sfdx-lwc-jest --debug --skipApiVersionCheck",
+        "test:unit:coverage": "sfdx-lwc-jest --coverage --skipApiVersionCheck",
+        "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "postinstall": "node bin/check-version.js && husky install",
+        "precommit": "npm run prettier:verify && [ $? -eq 0 ] && (npm run lint && npm run test) || exit -1"
+    },
+    "author": "serieslex",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sergiobaca/serieslexCDC"
+    },
+    "engines": {
+        "node": ">= 10.13.0",
+        "npm": ">= 6.5.0"
+    },
+    "devDependencies": {
+        "@prettier/plugin-xml": "^0.13.1",
+        "@sa11y/jest": "^0.3.0",
+        "@salesforce/eslint-config-lwc": "^0.11.0",
+        "@salesforce/sfdx-lwc-jest": "^0.10.4",
+        "eslint": "^7.22.0",
+        "eslint-config-prettier": "^8.1.0",
+        "husky": "^5.2.0",
+        "prettier": "^2.2.1",
+        "prettier-plugin-apex": "^1.8.0",
+        "semver": "^7.3.4"
+    }
+}

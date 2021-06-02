@@ -1,0 +1,9 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "👋 Welcome to Proyecto Base",
+  "steps": [
+    
+  ],
+  "ref": "sg/codetour",
+  "isPrimary": true
+}

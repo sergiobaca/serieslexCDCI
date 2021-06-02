@@ -1,0 +1,100 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y000002MAEbQAO",
+      "createdByName": "HUB admin Nacho",
+      "createdDate": "2017-09-08T10:34:52.000Z",
+      "fileName": "permissionsets/TIMBASURVEYS__Timba_Surveys_Administrator.permissionset",
+      "fullName": "TIMBASURVEYS__Timba_Surveys_Administrator",
+      "id": "0PS0Y000002EMvKWAW",
+      "lastModifiedById": "0050Y000002MAEbQAO",
+      "lastModifiedByName": "HUB admin Nacho",
+      "lastModifiedDate": "2017-09-08T10:34:52.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "TIMBASURVEYS",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0050Y000002MAEfQAO",
+      "createdByName": "SFDC Channel Order",
+      "createdDate": "2018-11-07T02:02:39.000Z",
+      "fileName": "permissionsets/CHANNEL_ORDERS__COA_User.permissionset",
+      "fullName": "CHANNEL_ORDERS__COA_User",
+      "id": "0PS1n0000010siKGAQ",
+      "lastModifiedById": "0050Y000002MAEfQAO",
+      "lastModifiedByName": "SFDC Channel Order",
+      "lastModifiedDate": "2020-12-07T10:47:38.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "CHANNEL_ORDERS",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0050Y000002MAEbQAO",
+      "createdByName": "HUB admin Nacho",
+      "createdDate": "2019-04-30T13:28:59.000Z",
+      "fileName": "permissionsets/Salesforce_Social_Customer_Service_Run_As_User.permissionset",
+      "fullName": "Salesforce_Social_Customer_Service_Run_As_User",
+      "id": "0PS1n000002J8EiGAK",
+      "lastModifiedById": "0050Y000002MAEbQAO",
+      "lastModifiedByName": "HUB admin Nacho",
+      "lastModifiedDate": "2019-04-30T13:28:59.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0050Y000002MAEbQAO",
+      "createdByName": "HUB admin Nacho",
+      "createdDate": "2017-09-07T09:40:11.000Z",
+      "fileName": "permissionsets/xx.permissionset",
+      "fullName": "xx",
+      "id": "0PS0Y000002EMJ6WAO",
+      "lastModifiedById": "0050Y000002MAEbQAO",
+      "lastModifiedByName": "HUB admin Nacho",
+      "lastModifiedDate": "2017-09-07T09:40:11.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0050Y000002MAEbQAO",
+      "createdByName": "HUB admin Nacho",
+      "createdDate": "2017-09-08T10:34:52.000Z",
+      "fileName": "permissionsets/TIMBASURVEYS__Timba_Surveys_Internal_User.permissionset",
+      "fullName": "TIMBASURVEYS__Timba_Surveys_Internal_User",
+      "id": "0PS0Y000002EMvLWAW",
+      "lastModifiedById": "0050Y000002MAEbQAO",
+      "lastModifiedByName": "HUB admin Nacho",
+      "lastModifiedDate": "2017-09-08T10:34:52.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "TIMBASURVEYS",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0050Y000002MAEfQAO",
+      "createdByName": "SFDC Channel Order",
+      "createdDate": "2018-11-07T02:02:39.000Z",
+      "fileName": "permissionsets/CHANNEL_ORDERS__COA_Admin_User.permissionset",
+      "fullName": "CHANNEL_ORDERS__COA_Admin_User",
+      "id": "0PS1n0000010siJGAQ",
+      "lastModifiedById": "0050Y000002MAEfQAO",
+      "lastModifiedByName": "SFDC Channel Order",
+      "lastModifiedDate": "2020-12-07T10:47:35.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "CHANNEL_ORDERS",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0050Y000003Mae1QAC",
+      "createdByName": "HUB Admin (Sergio)",
+      "createdDate": "2021-04-11T15:18:15.000Z",
+      "fileName": "permissionsets/CORE.permissionset",
+      "fullName": "CORE",
+      "id": "0PS1n000001PLxrGAG",
+      "lastModifiedById": "0050Y000003Mae1QAC",
+      "lastModifiedByName": "HUB Admin (Sergio)",
+      "lastModifiedDate": "2021-04-11T15:22:05.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    }
+  ]
+}
