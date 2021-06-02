@@ -57,13 +57,13 @@ jobs:
 
             # Authenticate dev hub
             - name: 'Authenticate Dev Hub'
-              uses: forcedotcom/salesforcedx-actions@master
+              uses: forcedotcom/salesforcedx-actions
               with:
                   args: 'force:auth:sfdxurl:store --sfdxurlfile=./DEVHUB_SFDX_URL.txt --setalias=devhub --setdefaultdevhubusername'
 
             # Authenticate package target org
             - name: 'Authenticate package target org'
-              uses: forcedotcom/salesforcedx-actions@master
+              uses: forcedotcom/salesforcedx-actions
               with:
                   args: 'force:auth:sfdxurl:store --sfdxurlfile=./PACKAGING_SFDX_URL.txt --setalias=packagingorg --setdefaultusername'
 
@@ -75,7 +75,7 @@ jobs:
             # Create package version
             - name: 'Create package version'
               id: package-version-create
-              uses: forcedotcom/salesforcedx-actions@master
+              uses: forcedotcom/salesforcedx-actions
               with:
                   args: 'force:package:version:create -p LWCRecipes -x -w 20 --json'
 
