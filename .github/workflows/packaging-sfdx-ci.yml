@@ -82,7 +82,7 @@ jobs:
             # Extract data from package version create result
             - name: 'Extract package:version:create result data'
               id: extract-data-package-version-create
-              uses: muenzpraeger/github-action-extract-sfdx-packaging-result@master
+              uses: muenzpraeger/github-action-extract-sfdx-packaging-result@main
               with:
                   json: ${{steps.package-version-create.outputs.result}}
 
@@ -95,7 +95,7 @@ jobs:
             # Install new package into test org
             - name: 'Install new package version into test org'
               if: steps.extract-data-package-version-create.outputs.isSuccess
-              uses: forcedotcom/salesforcedx-actions@master
+              uses: forcedotcom/salesforcedx-actions@main
               with:
                   args: 'force:package:install --package ${{ steps.extract-data-package-version-create.outputs.packageVersionId }} -w 10 -u packagingorg -r'
 
