@@ -2,7 +2,13 @@
     "orgName": "proyectobase",
     "edition": "Developer",
     "hasSampleData": false,
-    "features": ["Communities", "Walkthroughs", "EnableSetPasswordInApi", "PersonAccounts", "DebugApex"],
+    "features": [
+        "Communities",
+        "Walkthroughs",
+        "EnableSetPasswordInApi",
+        "PersonAccounts",
+        "DebugApex"
+    ],
     "settings": {
         "communitiesSettings": {
             "enableNetworksEnabled": true
