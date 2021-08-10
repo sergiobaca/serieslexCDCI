@@ -1,0 +1,10 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "series_lex_lwc",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "Este es un LWC de ejemplo para el proyecto"
+    }
+  ]
+}
