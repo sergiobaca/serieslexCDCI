@@ -58,9 +58,28 @@ jobs:
         runs-on: ubuntu-latest
         needs: formato
         steps:
-            - uses: sfdx-actions/setup-pmd@v1
-            - name: run-pmd
-              run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+              with:
+                  # Incremental diffs require fetch depth to be at 0 to grab the target branch
+                  fetch-depth: '0'
+
+            - name: Run PMD Analyser
+              id: pmd-analysis
+              uses: synergy-au/pmd-analyser-action@v2
+              with:
+                  pmd-version: '6.34.0'
+                  file-path: './force-app/main/default/classes'
+                  rules-path: '.pmd-ruleset.xml'
+                  error-rules: 'AvoidDirectAccessTriggerMap,AvoidDmlStatementsInLoops,AvoidHardcodingId'
+                  note-rules: 'ApexDoc'
+
+            - name: No PMD Errors?
+              run: |
+                  if ${{ steps.pmd-analysis.outputs.error-found }}
+                  then
+                    exit 3
+                  fi
     test:
         name: TestCodigo
         runs-on: ubuntu-latest
@@ -78,6 +97,11 @@ jobs:
             # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v2
+
+            # Install npm dependencies for Prettier and Jest
+            - name: 'Install npm dependencies'
+              if: steps.cache-npm.outputs.cache-hit != 'true'
+              run: npm ci
 
             # Store secret for dev hub
             - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
@@ -111,12 +135,6 @@ jobs:
             - name: 'Unit test Lightning Web Components'
               run: npm run test:unit:coverage
 
-            # Upload code coverage data
-            - name: 'Upload code coverage for LWC to Codecov.io'
-              uses: codecov/codecov-action@v2.0.2
-              with:
-                  flags: LWC
-
     despliegue:
         runs-on: ubuntu-latest
         needs: test
@@ -144,7 +162,7 @@ jobs:
 
             # Create deploy task
             - name: 'deploy in a production org'
-              run: sfdx force:source:deploy --sourcepath force-app/main/default --loglevel fatal -l RunLocalTests
+              run: sfdx force:source:deploy --sourcepath force-app/main/default --loglevel fatal
 
             # logout system
             - name: 'logout system'
