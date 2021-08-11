@@ -98,6 +98,11 @@ jobs:
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
+            # Install npm dependencies for Prettier and Jest
+            - name: 'Install npm dependencies'
+              if: steps.cache-npm.outputs.cache-hit != 'true'
+              run: npm ci
+
             # Store secret for dev hub
             - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
               shell: bash
@@ -129,12 +134,6 @@ jobs:
             # LWC unit tests
             - name: 'Unit test Lightning Web Components'
               run: npm run test:unit:coverage
-
-            # Upload code coverage data
-            - name: 'Upload code coverage for LWC to Codecov.io'
-              uses: codecov/codecov-action@v2.0.2
-              with:
-                  flags: LWC
 
     despliegue:
         runs-on: ubuntu-latest
