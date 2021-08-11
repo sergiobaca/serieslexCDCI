@@ -58,17 +58,9 @@ jobs:
         runs-on: ubuntu-latest
         needs: formato
         steps:
-            - uses: actions/checkout@v2
-              with:
-                  # Shallow clones should be disabled for a better relevancy of analysis
-                  fetch-depth: 0
-            - name: Scan
-              uses: SonarSource/sonarcloud-github-action@master
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
-                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+            - uses: sfdx-actions/setup-pmd@v1
+            - name: run-pmd
+              run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
     test:
         name: TestCodigo
         runs-on: ubuntu-latest
