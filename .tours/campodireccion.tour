@@ -1,0 +1,10 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "campodireccion",
+  "steps": [
+    {
+      "title": "documentacion de campo dirección.",
+      "description": "Hola Series Lex"
+    }
+  ]
+}
