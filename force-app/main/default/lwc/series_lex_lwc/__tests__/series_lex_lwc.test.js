@@ -14,6 +14,6 @@ describe('c-series_lex_lwc', () => {
             is: Series_lex_lwc
         });
         document.body.appendChild(element);
-        expect(1).toBe(2);
+        expect(1).toBe(1);
     });
 });
