@@ -24,8 +24,8 @@ describe('base config', () => {
         const cli = new eslint.CLIEngine({
             useEslintrc: false,
             baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+                extends: '@salesforce/eslint-config-lwc/base'
+            }
         });
 
         const report = cli.executeOnText(`
@@ -45,8 +45,8 @@ describe('base config', () => {
         const cli = new eslint.CLIEngine({
             useEslintrc: false,
             baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+                extends: '@salesforce/eslint-config-lwc/base'
+            }
         });
 
         const report = cli.executeOnText(`
@@ -67,8 +67,8 @@ describe('base config', () => {
         const cli = new eslint.CLIEngine({
             useEslintrc: false,
             baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+                extends: '@salesforce/eslint-config-lwc/base'
+            }
         });
 
         const report = cli.executeOnText(`
@@ -83,6 +83,9 @@ describe('base config', () => {
 
         const { messages } = report.results[0];
         assert.equal(messages.length, 1);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/no-unexpected-wire-adapter-usages');
+        assert.equal(
+            messages[0].ruleId,
+            '@lwc/lwc/no-unexpected-wire-adapter-usages'
+        );
     });
 });

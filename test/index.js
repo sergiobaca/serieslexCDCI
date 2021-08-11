@@ -24,8 +24,8 @@ describe('default config', () => {
         const cli = new eslint.CLIEngine({
             useEslintrc: false,
             baseConfig: {
-                extends: '@salesforce/eslint-config-lwc',
-            },
+                extends: '@salesforce/eslint-config-lwc'
+            }
         });
 
         const report = cli.executeOnText(`

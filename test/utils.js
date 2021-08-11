@@ -9,7 +9,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const PACKAGE_DIRECTORY = path.resolve(__dirname, '../node_modules/@salesforce/eslint-config-lwc');
+const PACKAGE_DIRECTORY = path.resolve(
+    __dirname,
+    '../node_modules/@salesforce/eslint-config-lwc'
+);
 
 function linkConfig() {
     if (!fs.existsSync(PACKAGE_DIRECTORY)) {
@@ -25,5 +28,5 @@ function unlinkConfig() {
 
 module.exports = {
     linkConfig,
-    unlinkConfig,
+    unlinkConfig
 };

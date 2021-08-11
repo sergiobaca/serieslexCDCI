@@ -26,9 +26,9 @@ describe('i18n configs', () => {
             baseConfig: {
                 extends: [
                     '@salesforce/eslint-config-lwc/i18n',
-                    '@salesforce/eslint-config-lwc/base',
-                ],
-            },
+                    '@salesforce/eslint-config-lwc/base'
+                ]
+            }
         });
 
         const report = cli.executeOnText(`
@@ -46,8 +46,8 @@ describe('i18n configs', () => {
         const cli = new eslint.CLIEngine({
             useEslintrc: false,
             baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/i18n',
-            },
+                extends: '@salesforce/eslint-config-lwc/i18n'
+            }
         });
 
         const report = cli.executeOnText(`

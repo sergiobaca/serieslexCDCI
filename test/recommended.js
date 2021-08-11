@@ -20,10 +20,10 @@ function getCliEngineWithRecommendedRules() {
             // Required for https://github.com/jest-community/eslint-plugin-jest
             settings: {
                 jest: {
-                    version: '26',
-                },
-            },
-        },
+                    version: '26'
+                }
+            }
+        }
     });
 }
 
@@ -87,8 +87,14 @@ describe('recommended config', () => {
 
         const { messages } = report.results[0];
         assert.strictEqual(messages.length, 2);
-        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-dupe-class-members');
-        assert.strictEqual(messages[1].ruleId, '@lwc/lwc/no-dupe-class-members');
+        assert.strictEqual(
+            messages[0].ruleId,
+            '@lwc/lwc/no-dupe-class-members'
+        );
+        assert.strictEqual(
+            messages[1].ruleId,
+            '@lwc/lwc/no-dupe-class-members'
+        );
     });
 
     it('should prevent attributes set during construction', () => {
@@ -107,7 +113,10 @@ describe('recommended config', () => {
 
         const { messages } = report.results[0];
         assert.strictEqual(messages.length, 1);
-        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-attributes-during-construction');
+        assert.strictEqual(
+            messages[0].ruleId,
+            '@lwc/lwc/no-attributes-during-construction'
+        );
     });
 
     it('should prevent invalid usage of Apex method', () => {
@@ -122,7 +131,7 @@ describe('recommended config', () => {
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(
             messages[0].ruleId,
-            '@salesforce/lightning/valid-apex-method-invocation',
+            '@salesforce/lightning/valid-apex-method-invocation'
         );
     });
 });
