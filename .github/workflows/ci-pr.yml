@@ -162,7 +162,7 @@ jobs:
 
             # Create deploy task
             - name: 'deploy in a production org'
-              run: sfdx force:source:deploy --sourcepath force-app/main/default --loglevel fatal -l RunLocalTests
+              run: sfdx force:source:deploy --sourcepath force-app/main/default --loglevel fatal
 
             # logout system
             - name: 'logout system'
